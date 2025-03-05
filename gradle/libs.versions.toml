@@ -1,0 +1,17 @@
+[versions]
+kotlin = "2.1.0"
+kotlinNode = "22.5.5-pre.831"
+kotlinJs = "1.0.0-pre.852"
+clikt = "5.0.3"
+
+[libraries]
+kotlin-node = { module = "org.jetbrains.kotlin-wrappers:kotlin-node", version.ref = "kotlinNode" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+ktlint-cli = { module = "com.pinterest.ktlint:ktlint-cli", version = "1.4.1" }
+kotlin-clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
+
+[plugins]
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version = "0.29.0" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.7" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
