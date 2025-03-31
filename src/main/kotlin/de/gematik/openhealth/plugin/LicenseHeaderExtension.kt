@@ -440,7 +440,7 @@ abstract class LicenseHeaderExtension
                 action: String,
                 fileName: String,
             ) {
-                if(isDryRun) {
+                if (isDryRun) {
                     logger.lifecycle("[DRY RUN] $action license header in $fileName")
                 } else {
                     logger.info("Going to $action license header in $fileName")
