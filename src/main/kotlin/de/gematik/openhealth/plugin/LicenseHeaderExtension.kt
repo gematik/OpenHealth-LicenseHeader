@@ -30,7 +30,8 @@ import java.io.File
 import javax.inject.Inject
 
 /**
- * Represents the style of license headers, including the start, middle, and end markers, and the file extensions it applies to.
+ * Represents the style of license headers, including the start,
+ * middle, and end markers, and the file extensions it applies to.
  */
 class LicenseHeaderStyleExtension(
     val start: Property<String>,
@@ -163,6 +164,7 @@ abstract class LicenseHeaderExtension
          *
          * @param task The Gradle task.
          */
+        @Suppress("TooManyFunctions")
         internal inner class TaskScope(
             task: Task,
         ) {
@@ -273,6 +275,7 @@ abstract class LicenseHeaderExtension
                 }
             }
 
+            @Suppress("ReturnCount")
             private fun findHeaderRange(
                 file: File,
                 lines: List<String>,
@@ -293,6 +296,7 @@ abstract class LicenseHeaderExtension
                 return IntRange(firstNonEmptyIndex, lastHeaderLine)
             }
 
+            @Suppress("ReturnCount")
             private fun findLastHeaderLine(
                 lines: List<String>,
                 startIndex: Int,
@@ -340,6 +344,7 @@ abstract class LicenseHeaderExtension
 
                 val allExtensions = commentStyles.get().flatMap { it.extensions.get() }
 
+                @Suppress("TooGenericExceptionCaught")
                 filesToScan.forEach { file ->
                     if (file.extension in allExtensions) {
                         try {
@@ -440,7 +445,7 @@ abstract class LicenseHeaderExtension
                 action: String,
                 fileName: String,
             ) {
-                if(isDryRun) {
+                if (isDryRun) {
                     logger.lifecycle("[DRY RUN] $action license header in $fileName")
                 } else {
                     logger.info("Going to $action license header in $fileName")

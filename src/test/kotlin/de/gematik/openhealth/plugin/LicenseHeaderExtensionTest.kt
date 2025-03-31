@@ -149,6 +149,7 @@ class LicenseHeaderExtensionTest {
                 TestCase("html", "<!--", "    ", "-->"),
             )
 
+        @Suppress("DestructuringDeclarationWithTooManyEntries")
         testCases.forEach { (ext, expectedStart, expectedMiddle, expectedEnd) ->
             val testProject = ProjectBuilder.builder().build()
             val testDir = createTempDirectory("license-header-test-$ext").toFile()
