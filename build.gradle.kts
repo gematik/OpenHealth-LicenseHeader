@@ -20,6 +20,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     `java-gradle-plugin`
     alias(libs.plugins.vanniktech.mavenPublish)
+    alias(libs.plugins.detekt) apply true
 }
 
 group = project.findProperty("gematik.baseGroup") as String
@@ -125,5 +126,17 @@ val ktlintFormat by tasks.registering(JavaExec::class) {
         "**/src/**/*.kt",
         "**.kts",
         "!**/build/**",
+    )
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    source.from(
+        files(
+            fileTree(".") {
+                include("**/src/**/*.kt")
+                exclude("**/build/**", "**/generated/**")
+            },
+        ),
     )
 }
