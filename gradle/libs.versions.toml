@@ -6,7 +6,6 @@ clikt = "5.0.3"
 gradlePublish = "1.3.1"
 detekt = "1.23.7"
 ktlint = "1.4.1"
-mavenPublish = "0.29.0"
 
 [libraries]
 kotlin-node = { module = "org.jetbrains.kotlin-wrappers:kotlin-node", version.ref = "kotlinNode" }
@@ -16,7 +15,6 @@ ktlint-cli = { module = "com.pinterest.ktlint:ktlint-cli", version.ref = "ktlint
 kotlin-clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
 
 [plugins]
-vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
 gradle-publish = { id = "com.gradle.plugin-publish", version.ref = "gradlePublish" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
