@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-import com.vanniktech.maven.publish.SonatypeHost
-
 plugins {
     alias(libs.plugins.kotlin.jvm)
-    `java-gradle-plugin`
-    alias(libs.plugins.vanniktech.mavenPublish)
     alias(libs.plugins.detekt) apply true
+    alias(libs.plugins.gradle.publish)
 }
 
 group = project.findProperty("gematik.baseGroup") as String
@@ -37,39 +34,6 @@ gradlePlugin {
             displayName = "OpenHealth License Plugin"
             description = "A plugin to manage license headers"
             tags = listOf("license", "licence", "header", "copyright", "gematik", "openhealth")
-        }
-    }
-}
-
-mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
-
-    // signAllPublications()
-
-    coordinates(group.toString(), "licenseheader", version.toString())
-
-    pom {
-        name = "OpenHealth License Header Plugin"
-        description = "OpenHealth License Header Plugin"
-        inceptionYear = "2025"
-        url = "https://github.com/gematik/OpenHealth-LicenseHeader"
-        licenses {
-            license {
-                name = "Apache 2.0"
-                url = "https://www.apache.org/licenses/LICENSE-2.0.txt"
-                distribution = "repo"
-            }
-        }
-        developers {
-            developer {
-                name = "gematik GmbH"
-                url = "https://github.com/gematik"
-            }
-        }
-        scm {
-            url = "https://github.com/gematik/OpenHealth-LicenseHeader"
-            connection = "scm:git:https://github.com/gematik/OpenHealth-LicenseHeader.git"
-            developerConnection = "scm:git:https://github.com/gematik/OpenHealth-LicenseHeader.git"
         }
     }
 }
