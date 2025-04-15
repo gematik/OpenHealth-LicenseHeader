@@ -44,8 +44,6 @@ gradlePlugin {
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.DEFAULT)
 
-    signAllPublications()
-
     coordinates(group.toString(), "licenseheader", version.toString())
 
     pom {
