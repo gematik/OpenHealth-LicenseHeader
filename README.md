@@ -96,10 +96,6 @@ variables(
 
 ## License
 
-*******
-
-For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
-
 Copyright 2025, gematik GmbH
 
 Apache License, Version 2.0
