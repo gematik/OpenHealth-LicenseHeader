@@ -96,7 +96,7 @@ variables(
 
 ## License
 
-Copyright 2025, gematik GmbH
+Copyright 2025 gematik GmbH
 
 Apache License, Version 2.0
 
