@@ -1,7 +1,8 @@
 import com.vanniktech.maven.publish.SonatypeHost
+import org.gradle.api.attributes.Bundling
 
 /*
- * Copyright 2025 gematik GmbH
+ * Copyright 2025, gematik GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -97,7 +98,7 @@ val ktlint by configurations.creating
 dependencies {
     ktlint(libs.ktlint.cli) {
         attributes {
-            attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named(Bundling.EXTERNAL))
+            attribute(Bundling.BUNDLING_ATTRIBUTE, objects.named<Bundling>(Bundling.EXTERNAL))
         }
     }
 }
